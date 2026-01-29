@@ -35,7 +35,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-black">
       {/* Navbar */}
       <Navbar onGetStartedClick={handleCreateTaskClick} />
 
@@ -67,7 +67,7 @@ function App() {
                   whileHover={{ scale: 1.05, x: -5 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handleBackToHome}
-                  className="flex items-center text-gray-600 hover:text-blue-600 transition-colors font-medium"
+                  className="flex items-center text-gray-400 hover:text-white transition-colors font-medium"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -90,35 +90,13 @@ function App() {
         taskTitle={lastCreatedTask}
       />
 
-      {/* Floating Background Decorations */}
+      {/* Subtle Background Accent */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-          className="absolute top-1/4 -left-48 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [90, 0, 90],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-          className="absolute bottom-1/4 -right-48 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl"
-        />
+        <div className="absolute top-0 right-0 w-125 h-125 bg-white/2 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-125 h-125 bg-white/2 rounded-full blur-3xl" />
       </div>
     </div>
   );
-}
+};
 
 export default App;
